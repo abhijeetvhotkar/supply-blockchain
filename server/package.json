@@ -1,0 +1,55 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Supply chain DAPP",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js test/**/*.js",
+    "start": "nodemon --exec babel-node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhijeetvhotkar/supply-blockchain.git"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "supply-chain",
+    "node",
+    "javascript"
+  ],
+  "author": "Abhijeet Vhotkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhijeetvhotkar/supply-blockchain/issues"
+  },
+  "homepage": "https://github.com/abhijeetvhotkar/supply-blockchain#readme",
+  "dependencies": {
+    "archiver": "^3.1.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-stream-zip": "^1.8.2",
+    "nodemon": "^2.0.6",
+    "pg": "^8.5.0",
+    "pg-hstore": "^2.3.3",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "sequelize": "^6.3.5",
+    "swagger-client": "^3.9.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/register": "^7.8.3",
+    "@babel/runtime": "^7.8.3",
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3",
+    "sequelize-cli": "^6.2.0",
+    "sinon": "^7.5.0",
+    "supertest": "^4.0.2"
+  }
+}
