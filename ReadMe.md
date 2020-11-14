@@ -1,19 +1,19 @@
 # Supply Chain Dapp
 
-The supply chain Dapp is a simple version of getting more information about a product using Blockchain.A contract is required to add products in the blockchain, once a contract is deployed, users can add the products into the blockchain, as the blocks are read only, the end user/customer can trust as the historical data can be never altered in any way, shape or form. Yes, definitely you can add subsequent blocks to the blochain about any alterations to the products state in the real world.
+The supply chain Dapp is a simple version of getting more information about a product using Blockchain. A contract is required to add products in the blockchain. Once a contract is deployed, users can add the products into the blockchain. As the blocks are read only, the end user/customer can trust the historical data which can be never altered in any way, shape or form. You can add subsequent blocks to the blochain to the products state in the real world.
 
-This app is a tiny part of the huge idea of a fully functioning blockchain.
+This app is a tiny part of the huge idea of a fully functioning blockchain for product registration.
 
 In this application:
 1. An end user can _Deploy Contract_
-2. Get results stored in the _Database_
-3. View extra information for the entries in the _Database_
+2. Get products from the _Database_
+3. View extra information for the product entries in the _Database_
 4. Add new products to the _Blockchain_ and _Database_
 5. Get the new products list in the _Database_ and _Blockchain_
 
 ## Project architecture
 
-The project is structure as microservice based architecture. (Not with Kafka/RabbitMQ) as the project is tiny. As the project gets expanded, a message queue can be added on.
+The project is structure as microservice based architecture (Not with Kafka/RabbitMQ) as the project is tiny. As the project gets expanded, a message queue can be added optionally.
 
 
 ```bash
@@ -44,7 +44,8 @@ The project is structure as microservice based architecture. (Not with Kafka/Rab
 ## How to run the project
 
 - Use the link to setup Kaleido Blockchain [Click Here](https://github.com/kaleido-io/developer-challenge/blob/master/README.md#setting-up-your-kaleido-blockchain)
-- Once all the configurations are added in the `server->config.js` file go ahead and run the `script.sh` script to spin up the complete project
+- Change the environment variables filename `dbserver->.env.template` to `.env`
+- Once all the configurations are added in the `server->config.js` file go ahead and run the `script.sh` script to spin up database, frontend and backend servers. 
 
 ### User interaction
 
@@ -67,7 +68,7 @@ The project is structure as microservice based architecture. (Not with Kafka/Rab
 ## Known issues
 - Database is not cleared when a new contract is deployed, and causes blockchain to return `No data`.
 - Refreshing the Front end page will cause the Contract value to lose and a new contract will have to created. (Database will still contain the old added products and the count/id will be out of synce causing the app to fail to add products)
-- Need to refresh table by clicking `GET DB DATA` button
+- Need to refresh table by clicking `GET DB DATA` button.
 
 
 ## The following tasks are completed.
