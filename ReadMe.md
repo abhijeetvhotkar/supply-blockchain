@@ -49,16 +49,16 @@ The project is structure as microservice based architecture (Not with Kafka/Rabb
 
 ### User interaction
 
-- Once the react app runs go to `loocalhost:3000` in a browser (In case, if the script open this up automatically)
+- Once the react app runs go to `loocalhost:3000` in a browser (In case, if the script does not open this up automatically)
 - Click on `DEPLOY CONTRACT` button.
-- This will generate a contract and the SOLIDITY file would add in the 5 products similar in the database.
-- Click on the `GET DB DATA` to get the values from DB. Seeders must have run before to generate 5 products.
-- Click on the `VIEW` button to see more details of the product. Notice that this will make a GET request to the blockchain and you would be able to see more product information.
-- Click on the `+` Floating action button to open the form to register a new product to the blockchain.
+- This will generate a contract and the SOLIDITY file would persist 5 products in the database.
+- Click on the `GET DB DATA` to retrieve the values from DB. Seeders should have been run in the shell script `dbserver.sh`.
+- Click on the `VIEW` button to see more details of the product. This will make a GET request to the blockchain and you should be able to see more product information.
+- Click on the `+` Floating action button to open register a new product and persist data to the blockchain.
 - Fill the form and click on the `Register a new product` button.
-- This will make a POST to the `Blockchain server` that in turn will update the database as well.
-- Now click on the `GET DB DATA` button to get the updated list of products in database.
-- Click on the `VIEW` button in the newly added product, this will make a GET to the Blockchain and you'll see more information that you had previously added in the form.
+- This will make a POST request to the `Blockchain server` that will update the database as well with the primary key. Note that the product details are not stored in this database as those would be retrieved later from the blockchain. However, the product id and product name are saved in the database to reference those in the products table from the UI. 
+- Now click on the `GET DB DATA` button to fetch the updated list of products from the database.
+- Click on the `VIEW` button in the newly added product list, this will make a GET request to the Blockchain and you should see more information that was previously added in the registration form.
 - Thats it 🙂
 
 ## Demo:
@@ -66,9 +66,9 @@ The project is structure as microservice based architecture (Not with Kafka/Rabb
 ![](demo.gif)
 
 ## Known issues
-- Database is not cleared when a new contract is deployed, and causes blockchain to return `No data`.
-- Refreshing the Front end page will cause the Contract value to lose and a new contract will have to created. (Database will still contain the old added products and the count/id will be out of synce causing the app to fail to add products)
-- Need to refresh table by clicking `GET DB DATA` button.
+- Database is not cleared when the contract is redeployed, and causes blockchain to return `No data`.
+- The contract Address will be lost upon refreshing the page. In this case, a new contract has to be deployed. Note that the database will still contain the previously added products and the count/ids will be out of sync and the data would not persist in the Blockchain.
+- Auto refresh of the products table can be implemented.
 
 
 ## The following tasks are completed.
